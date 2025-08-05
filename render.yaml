@@ -2,10 +2,8 @@ services:
   - type: web
     name: smart-summary-backend
     env: python
-    plan: free
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn app:app"
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
     rootDir: backend
-    envVars:
-      - key: FLASK_ENV
-        value: production
+    plan: free
+    region: oregon
